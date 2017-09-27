@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: 1
+  problem_id: 1
+  l_current: 1
+  l_resistance: 1
+  l_voltage: 1
+
+two:
+  quantity: 1
+  problem_id: 1
+  l_current: 1
+  l_resistance: 1
+  l_voltage: 1
