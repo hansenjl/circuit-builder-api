@@ -5,8 +5,10 @@ class Api::ProblemsController < ApplicationController
   end
 
   def show
+    render json: Problem.find_by(id: params[:id])
   end
 
   def create
+
   end
 end
