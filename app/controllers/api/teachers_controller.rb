@@ -13,6 +13,7 @@ before_action :set_teacher, only: [:show, :update, :destroy]
   def create
     teacher = Teacher.new(teacher_params)
     if teacher.save
+      session[:user_id] = teacher.id
       render json: teacher
     else
       render json: {message: teacher.errors}, status: 400
@@ -34,6 +35,7 @@ before_action :set_teacher, only: [:show, :update, :destroy]
 
   def destroy
     if @teacher.destroy
+      session.delete :user_id
       render json: {message: "Successfully Destroyed"}, status: 204
     else
       render json: {message: "Unable to destroy"}, status: 400
