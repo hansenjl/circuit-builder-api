@@ -4,4 +4,7 @@ Rails.application.routes.draw do
     resources :teachers, only: [:create, :show, :destroy, :update]
   end
 
+  get '/api/login' => 'sessions#create'
+  get 'api/logout' => 'sessions#destroy'
+
 end
