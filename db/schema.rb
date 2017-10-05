@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170927222030) do
+ActiveRecord::Schema.define(version: 20170927212019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "loops", force: :cascade do |t|
-    t.integer "quantity"
     t.integer "problem_id"
-    t.integer "l_current"
-    t.integer "l_resistance"
-    t.integer "l_voltage"
+    t.decimal "l_current", precision: 8, scale: 2
+    t.decimal "l_resistance", precision: 8, scale: 2
+    t.decimal "l_voltage", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,33 +27,18 @@ ActiveRecord::Schema.define(version: 20170927222030) do
   create_table "problems", force: :cascade do |t|
     t.integer "difficulty"
     t.string "category"
-    t.integer "tot_voltage"
-    t.integer "tot_resistance"
-    t.integer "tot_current"
+    t.decimal "tot_voltage", precision: 8, scale: 2
+    t.decimal "tot_resistance", precision: 8, scale: 2
+    t.decimal "tot_current", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "resistors", force: :cascade do |t|
-    t.integer "voltage"
-    t.integer "current"
-    t.integer "resistance"
+    t.decimal "voltage", precision: 8, scale: 2
+    t.decimal "current", precision: 8, scale: 2
+    t.decimal "resistance", precision: 8, scale: 2
     t.integer "loop_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teacher_problems", force: :cascade do |t|
-    t.integer "teacher_id"
-    t.integer "problem_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
