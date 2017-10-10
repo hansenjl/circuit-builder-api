@@ -34,6 +34,6 @@ class Api::ProblemsController < ApplicationController
   end
 
   def problem_params
-    params.require(:problem).permit(:difficulty, :category, :tot_voltage, :tot_resistance, :tot_current, loops_attributes: [:l_voltage, :l_resistance, :l_current, resistors_attributes: [:voltage, :current, :resistance]])
+    params.require(:problem).permit(:difficulty, :category, :tot_voltage, :tot_resistance, :tot_current, loops_attributes: [:l_voltage, :l_resistance, :l_current, resistors_attributes: [:voltage, :current, :resistance, :num]])
   end
 end
