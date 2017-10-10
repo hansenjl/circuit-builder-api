@@ -21,7 +21,7 @@ class Api::ProblemsController < ApplicationController
 
   def destroy
     if @problem.destroy
-      render json: {message: "Successfully Destroyed"}, status: 204
+      render json: {message: "Successfully destroyed"}, status: 204
     else
       render json: {message: "Unable to destroy"}, status: 400
     end

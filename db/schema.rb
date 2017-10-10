@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170927212019) do
     t.decimal "current", precision: 8, scale: 2
     t.decimal "resistance", precision: 8, scale: 2
     t.integer "loop_id"
+    t.integer "num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
