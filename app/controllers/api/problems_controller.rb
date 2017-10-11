@@ -1,6 +1,6 @@
 class Api::ProblemsController < ApplicationController
 
-  before_action :set_problem, only: [:show, :destroy]
+  before_action :set_problem, only: [:show, :update, :destroy]
 
   def index
     render json: Problem.all
@@ -27,6 +27,14 @@ class Api::ProblemsController < ApplicationController
     end
   end
 
+  def update
+    if @problem.update(problem_params)
+      render json: @problem
+    else
+      render json: {message: "Unable to update"}, status: 400
+    end
+  end
+
   private
 
   def set_problem
@@ -34,6 +42,6 @@ class Api::ProblemsController < ApplicationController
   end
 
   def problem_params
-    params.require(:problem).permit(:difficulty, :category, :tot_voltage, :tot_resistance, :tot_current, loops_attributes: [:l_voltage, :l_resistance, :l_current, resistors_attributes: [:voltage, :current, :resistance, :num]])
+    params.require(:problem).permit(:difficulty, :likes, :category, :tot_voltage, :tot_resistance, :tot_current, loops_attributes: [:l_voltage, :l_resistance, :l_current, resistors_attributes: [:voltage, :current, :resistance, :num]])
   end
 end

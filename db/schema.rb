@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170927212019) do
     t.decimal "tot_voltage", precision: 8, scale: 2
     t.decimal "tot_resistance", precision: 8, scale: 2
     t.decimal "tot_current", precision: 8, scale: 2
+    t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

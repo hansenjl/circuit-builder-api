@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :problems, only: [:create, :show, :index, :destroy]
-    resources :teachers, only: [:create, :show, :destroy, :update]
+    resources :problems, only: [:create, :show, :index, :update, :destroy]
   end
 
   get '/api/login' => 'sessions#create'
