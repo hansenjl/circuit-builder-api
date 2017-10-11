@@ -1,10 +1,11 @@
 class CreateResistors < ActiveRecord::Migration[5.1]
   def change
     create_table :resistors do |t|
-      t.integer :voltage
-      t.integer :current
-      t.integer :resistance
+      t.decimal :voltage, :precision => 8, :scale => 2
+      t.decimal :current, :precision => 8, :scale => 2
+      t.decimal :resistance, :precision => 8, :scale => 2
       t.integer :loop_id
+      t.integer :num
 
       t.timestamps
     end
