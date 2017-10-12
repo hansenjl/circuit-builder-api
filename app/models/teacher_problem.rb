@@ -1,2 +1,0 @@
-class TeacherProblem < ApplicationRecord
-end

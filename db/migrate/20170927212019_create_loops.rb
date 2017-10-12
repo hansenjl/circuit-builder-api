@@ -1,11 +1,10 @@
 class CreateLoops < ActiveRecord::Migration[5.1]
   def change
     create_table :loops do |t|
-      t.integer :quantity
       t.integer :problem_id
-      t.integer :l_current
-      t.integer :l_resistance
-      t.integer :l_voltage
+      t.decimal :l_current, :precision => 8, :scale => 2
+      t.decimal :l_resistance, :precision => 8, :scale => 2
+      t.decimal :l_voltage, :precision => 8, :scale => 2
 
       t.timestamps
     end
