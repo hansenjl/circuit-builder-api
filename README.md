@@ -1,6 +1,6 @@
 # Circuit Builder API
 
-This is the back end for the Circuit Builder React app found here: https://github.com/hansenjl/circuit-builder-client
+This is the back end for the Circuit Builder React app. The front end can be found here: https://github.com/hansenjl/circuit-builder-client
 
 
 ## Overview
